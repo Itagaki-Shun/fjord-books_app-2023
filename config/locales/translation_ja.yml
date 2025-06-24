@@ -9,3 +9,10 @@ ja:
         memo: メモ
         picture: 画像
         title: タイトル
+
+  views:
+    pagination:
+      next: 次へ
+      previous: 前へ
+      first: 最初へ
+      last: 最後へ
