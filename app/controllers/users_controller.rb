@@ -5,7 +5,12 @@ class UsersController < ApplicationController
     @users = User.order(:id).page(params[:page])
   end
 
-  def show
+  def mypage
     @user = current_user
+    render :show
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 end

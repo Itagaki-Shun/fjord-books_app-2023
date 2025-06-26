@@ -64,7 +64,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.update_without_password(params)
   end
 
-  def after_update_path_for(resource)
-    users_show_path
+  def after_update_path_for(_resource)
+    mypage_path
   end
 end
