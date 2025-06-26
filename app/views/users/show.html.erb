@@ -5,6 +5,15 @@
 <h3>メールアドレス</h3>
 <%= @user.email %>
 
+<h3>郵便番号</h3>
+<%= @user.zip.presence || "未登録" %>
+
+<h3>住所</h3>
+<%= @user.address.presence || "未登録" %>
+
+<h3>自己紹介文</h3>
+<%= simple_format(@user.introduction.presence || "未登録") %>
+
 <nav class="page-nav">
   <%= link_to '本の一覧へ', books_path %>
   <%= link_to 'プロフィールを編集', edit_user_registration_path %>
