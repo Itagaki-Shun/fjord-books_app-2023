@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   def index
-    @users = User.order(:id).page(params[:page])
+    @users = User.where.not(id: current_user.id).order(:id).page(params[:page])
   end
 
   def mypage
