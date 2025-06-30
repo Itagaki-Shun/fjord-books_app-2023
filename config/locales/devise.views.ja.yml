@@ -25,9 +25,13 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        zip: 郵便番号
+        address: 住所
+        introduction: 自己紹介
     models:
       user:
         other: ユーザー
+        profile: プロフィール
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -118,6 +122,8 @@ ja:
         sign_in: ログイン
       signed_in: ログインしました。
       signed_out: ログアウトしました。
+      destroy:
+        logout: ログアウト
     shared:
       links:
         back: 戻る
