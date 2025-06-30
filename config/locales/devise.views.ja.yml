@@ -82,6 +82,8 @@ ja:
         change_your_password: パスワードを変更
         confirm_new_password: 確認用新しいパスワード
         new_password: 新しいパスワード
+        minimum_password_length:
+          other: "（%{count}字以上）"
       new:
         forgot_your_password: パスワードを忘れましたか？
         send_me_reset_password_instructions: パスワードの再設定方法を送信する
