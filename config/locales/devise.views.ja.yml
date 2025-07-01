@@ -30,6 +30,7 @@ ja:
         introduction: 自己紹介
     models:
       user:
+        one: ユーザー
         other: ユーザー
         profile: プロフィール
   devise:
@@ -150,4 +151,5 @@ ja:
       not_found: は見つかりませんでした。
       not_locked: はロックされていません。
       not_saved:
+        one: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
