@@ -17,6 +17,6 @@
 
 <nav class="page-nav">
     <%= link_to t('views.common.new', name: Book.model_name.human.downcase), new_book_path %>
-    <%= link_to 'プロフィール', mypage_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+    <%= link_to t('activerecord.models.user.profile'), mypage_path %>
+    <%= link_to t('devise.sessions.destroy.logout'), destroy_user_session_path, data: { turbo_method: :delete } %>
 </nav>
