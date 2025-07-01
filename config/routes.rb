@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'mypage', to: 'users#mypage'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
+    sessions: 'users/sessions'
   }
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener'
