@@ -326,7 +326,7 @@ DEPENDENCIES
   carrierwave
   debug
   devise
-  devise-i18n (~> 1.14)
+  devise-i18n
   erb_lint
   faker
   i18n_generators

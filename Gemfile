@@ -87,4 +87,4 @@ gem 'kaminari'
 
 gem 'devise'
 
-gem 'devise-i18n', '~> 1.14'
+gem 'devise-i18n'
