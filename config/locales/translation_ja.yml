@@ -2,6 +2,9 @@ ja:
   activerecord:
     models:
       book: 本
+      user:
+        one: ユーザー
+        profile: プロフィール
 
     attributes:
       book:
@@ -9,3 +12,12 @@ ja:
         memo: メモ
         picture: 画像
         title: タイトル
+      user:
+        zip: 郵便番号
+        address: 住所
+        introduction: 自己紹介
+
+  devise:
+    sessions:
+      destroy:
+        logout: ログアウト
