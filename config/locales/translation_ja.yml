@@ -18,20 +18,6 @@ ja:
         introduction: 自己紹介
 
   devise:
-    passwords:
-      edit:
-        minimum_password_length:
-          other: "（%{count}字以上）"
-
-    registrations:
-      edit:
-        minimum_password_length:
-          other: "（%{count}字以上）"
-
     sessions:
       destroy:
         logout: ログアウト
-  errors:
-    messages:
-      not_saved:
-        one: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
