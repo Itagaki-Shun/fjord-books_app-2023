@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
+  before_action :set_book, only: %i[show]
+
   def index
     @reports = Report.order(:id).page(params[:page])
   end
@@ -8,6 +10,8 @@ class ReportsController < ApplicationController
   def new
     @report = Report.new
   end
+
+  def show; end
 
   def create
     @report = Report.new(report_params)
@@ -24,6 +28,10 @@ class ReportsController < ApplicationController
   end
 
   private
+
+  def set_book
+    @report = Report.find(params[:id])
+  end
 
   def report_params
     params.require(:report).permit(:title, :content)
