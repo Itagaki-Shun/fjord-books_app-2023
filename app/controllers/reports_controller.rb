@@ -4,4 +4,8 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.order(:id).page(params[:page])
   end
+
+  def new
+    @report = Report.new
+  end
 end
