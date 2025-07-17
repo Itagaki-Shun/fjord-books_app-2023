@@ -319,3 +319,23 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: var(--global-primary-c-hover);
 }
+
+.comment-item {
+  max-width: var(--single-column-w);
+  display: block;
+  border: solid var(--global-bw) var(--global-bc);
+  padding: 5px;
+  margin: 10px 0px;
+  border-radius: var(--global-br);
+  font-size: var(--global-fz-md);
+  line-height: var(--global-lh);
+}
+.comment-body {
+  margin: 20px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
