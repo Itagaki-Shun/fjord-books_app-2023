@@ -11,7 +11,9 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def show; end
+  def show
+    @commentable = @report
+  end
 
   def edit; end
 
