@@ -1,0 +1,21 @@
+<h3><%= t('views.common.comment', name: Comment.model_name.human) %></h3>
+<% @commentable.comments.each do |comment| %>
+  <div class="comment-item">
+    <div id="<%= dom_id comment %>">
+      <div class="comment-header">
+        <p>
+          <%= comment.user&.name.present? ?comment.user.name : comment.user&.email %>
+        </p>
+        <p>
+          <%= l(comment.created_at, format: :long) %>
+        </p>
+      </div>
+
+      <div class="comment-body">
+        <p>
+          <%= comment.content %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
