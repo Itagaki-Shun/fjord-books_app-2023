@@ -18,6 +18,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @commentable = @comment.commentable
+
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
+      format.json { render :show, status: :created, location: @comment }
+    end
+  end
+
   private
 
   def set_commentable
