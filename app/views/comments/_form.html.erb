@@ -2,7 +2,7 @@
   <%= form_with model: [@commentable, Comment.new], local: true do |f| %>
     <div class="field">
       <%= f.label :content %>
-      <%= f.text_area :content, rows: 3 %>
+      <%= f.text_area :content, required: true %>
     </div>
 
     <div class="comment-actions">
