@@ -324,7 +324,7 @@ form input[type="submit"]:hover {
   max-width: var(--single-column-w);
   display: block;
   border: solid var(--global-bw) var(--global-bc);
-  padding: 5px;
+  padding: 10px;
   margin: 10px 0px;
   border-radius: var(--global-br);
   font-size: var(--global-fz-md);
