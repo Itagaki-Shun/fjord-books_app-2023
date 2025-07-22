@@ -339,3 +339,15 @@ form input[type="submit"]:hover {
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
 }
+
+.comment-form {
+  max-width: 640px;
+  margin: 30 0;
+  padding: 10px;
+  border: 2px solid #ddd;
+}
+
+.comment-form .comment-actions {
+  text-align: center;
+  margin: 10px;
+}
