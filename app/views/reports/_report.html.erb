@@ -1,8 +1,16 @@
 <div id="<%= dom_id report %>">
-  <p>
-    <strong><%= Report.human_attribute_name(:poster) %>:</strong>
-    <%= report.user&.name.present? ? report.user.name : report.user&.email %>
-  </p>
+  <% if show_header %>
+    <div class="report-header">
+      <p>
+        <strong><%= Report.human_attribute_name(:poster) %>:</strong>
+        <%= report.user&.name.present? ? report.user.name : report.user&.email %>
+      </p>
+
+      <p>
+        <%= l(report.created_at, format: :long) %>
+      </p>
+    </div>
+  <% end %>
 
   <p>
     <strong><%= Report.human_attribute_name(:title) %>:</strong>
