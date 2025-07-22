@@ -1,4 +1,4 @@
-<h3><%= t('views.common.comment', name: Comment.model_name.human, count: @report.comments.count) %></h3>
+<h3><%= t('views.common.comment', name: Comment.model_name.human, count: @commentable.comments.count) %></h3>
 <% @commentable.comments.each do |comment| %>
   <div class="comment-item">
     <div id="<%= dom_id comment %>">
