@@ -19,6 +19,7 @@ ja:
         self_introduction: 自己紹介文
         avatar: ユーザ画像
       report:
+        poster: 投稿者
         title: タイトル
         content: 内容
       comment:
