@@ -4,7 +4,7 @@
     <div id="<%= dom_id comment %>">
       <div class="comment-header">
         <p>
-          <%= comment.user&.name.present? ?comment.user.name : comment.user&.email %>
+          <%= comment.user&.display_name %>
         </p>
         <p>
           <%= l(comment.created_at, format: :long) %>

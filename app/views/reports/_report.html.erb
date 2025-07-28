@@ -3,7 +3,7 @@
     <div class="report-header">
       <p>
         <strong><%= Report.human_attribute_name(:poster) %>:</strong>
-        <%= report.user&.name.present? ? report.user.name : report.user&.email %>
+        <%= report.user&.display_name %>
       </p>
 
       <p>
