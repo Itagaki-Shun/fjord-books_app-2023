@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = @comment.errors.full_messages.join
+      redirect_to @commentable
     end
   end
 
