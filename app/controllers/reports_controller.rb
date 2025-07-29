@@ -28,6 +28,8 @@ class ReportsController < ApplicationController
   end
 
   def update
+    @report = current_user.reports.find(params[:id])
+
     if @report.update(report_params)
       redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
