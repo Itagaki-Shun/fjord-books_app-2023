@@ -3,8 +3,11 @@
 require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @book = books(:one)
+    @book = books(:cherry_book)
+    sign_in users(:alice)
   end
 
   test 'visiting the index' do

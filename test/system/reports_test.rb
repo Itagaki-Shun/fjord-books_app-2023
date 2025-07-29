@@ -3,8 +3,11 @@
 require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @report = reports(:one)
+    @report = reports(:alice_report)
+    sign_in users(:alice)
   end
 
   test 'visiting the index' do
