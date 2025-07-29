@@ -11,7 +11,13 @@ class CommentsController < ApplicationController
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       flash[:alert] = @comment.errors.full_messages.join
-      redirect_to @commentable
+      case @commentable
+      when Book
+        @book = @commentable
+      when Report
+        @report = @commentable
+      end
+      render "#{@commentable.model_name.route_key}/show", status: :unprocessable_entity
     end
   end
 
