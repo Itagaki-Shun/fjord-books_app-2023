@@ -1,8 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   title: MyString
-#   memo: MyText
+cherry_book:
+  title: プロを目指す人のためのRuby入門
+  memo: 名著です!!
 
 # two:
 #   title: MyString
