@@ -15,16 +15,16 @@ class BooksTest < ApplicationSystemTestCase
     assert_selector 'h1', text: '本の一覧'
   end
 
-  test 'should create book' do
+  test '本の新規作成をする' do
     visit books_url
-    click_on 'New book'
+    click_on '本の新規作成'
 
-    fill_in 'Memo', with: @book.memo
-    fill_in 'Title', with: @book.title
-    click_on 'Create Book'
+    fill_in 'メモ', with: @book.memo
+    fill_in 'タイトル', with: @book.title
+    click_on '登録する'
 
-    assert_text 'Book was successfully created'
-    click_on 'Back'
+    assert_text '本が作成されました。'
+    click_on '本の一覧に戻る'
   end
 
   test 'should update Book' do
