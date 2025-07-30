@@ -36,4 +36,24 @@ class ReportTest < ActiveSupport::TestCase
       assert_instance_of Date, report.created_on
     end
   end
+
+  test 'レポートURLを含む内容でメンションが作成される' do
+    # メンションされる側の日報
+    report1 = Report.create!(
+      user: @bob,
+      title: 'Rubyについて',
+      content: 'Rubyまとめチートシート・・・'
+    )
+
+    # メンションする側の日報
+    report2 = Report.create!(
+      user: @alice,
+      title: 'Rubyについて学習した',
+      content: "参考にした日報はこちら\nhttp://localhost:3000/reports/#{report1.id}"
+    )
+
+    # メンション確認
+    assert_equal 1, report2.mentioning_reports.count
+    assert_includes report2.mentioning_reports, report1
+  end
 end
