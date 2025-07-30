@@ -6,7 +6,6 @@
 #
 alice:
   email: 'alice@example.com'
-# column: value
-#
-# two: {}
-# column: value
+
+bob:
+  email: 'bob@example.com'

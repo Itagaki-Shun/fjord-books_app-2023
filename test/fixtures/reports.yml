@@ -5,7 +5,7 @@ alice_report:
   title: 日報1日目
   content: 日報1日目の内容です!!
 
-# two:
-#   user: two
-#   title: MyString
-#   content: MyText
+bob_report:
+  user: bob
+  title: 今日もよく頑張った
+  content: 学習が捗った！
