@@ -10,9 +10,9 @@ class BooksTest < ApplicationSystemTestCase
     sign_in users(:alice)
   end
 
-  test 'visiting the index' do
+  test '本一覧ページにアクセスする' do
     visit books_url
-    assert_selector 'h1', text: 'Books'
+    assert_selector 'h1', text: '本の一覧'
   end
 
   test 'should create book' do
