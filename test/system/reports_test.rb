@@ -15,17 +15,16 @@ class ReportsTest < ApplicationSystemTestCase
     assert_selector 'h1', text: '日報の一覧'
   end
 
-  test 'should create report' do
+  test '日報の新規作成をする' do
     visit reports_url
-    click_on 'New report'
+    click_on '日報の新規作成'
 
-    fill_in 'Content', with: @report.content
-    fill_in 'Title', with: @report.title
-    fill_in 'User', with: @report.user_id
-    click_on 'Create Report'
+    fill_in '内容', with: @report.content
+    fill_in 'タイトル', with: @report.title
+    click_on '登録する'
 
-    assert_text 'Report was successfully created'
-    click_on 'Back'
+    assert_text '日報が作成されました。'
+    click_on '日報の一覧に戻る'
   end
 
   test 'should update Report' do
