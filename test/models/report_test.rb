@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-  test 'レポート編集は作成者のみ可能' do
+  test '日報の編集は作成者のみ可能' do
     alice = users(:alice)
     bob = users(:bob)
 
