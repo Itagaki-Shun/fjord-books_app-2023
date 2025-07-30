@@ -39,10 +39,10 @@ class BooksTest < ApplicationSystemTestCase
     click_on '本の一覧に戻る'
   end
 
-  test 'should destroy Book' do
+  test '本を削除する' do
     visit book_url(@book)
-    click_on 'Destroy this book', match: :first
+    click_on 'この本を削除', match: :first
 
-    assert_text 'Book was successfully destroyed'
+    assert_text '本が削除されました'
   end
 end
