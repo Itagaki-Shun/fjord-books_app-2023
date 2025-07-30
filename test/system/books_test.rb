@@ -27,16 +27,16 @@ class BooksTest < ApplicationSystemTestCase
     click_on '本の一覧に戻る'
   end
 
-  test 'should update Book' do
+  test '本の編集をする' do
     visit book_url(@book)
-    click_on 'Edit this book', match: :first
+    click_on 'この本を編集', match: :first
 
-    fill_in 'Memo', with: @book.memo
-    fill_in 'Title', with: @book.title
-    click_on 'Update Book'
+    fill_in 'メモ', with: @book.memo
+    fill_in 'タイトル', with: @book.title
+    click_on '更新する'
 
-    assert_text 'Book was successfully updated'
-    click_on 'Back'
+    assert_text '本が更新されました。'
+    click_on '本の一覧に戻る'
   end
 
   test 'should destroy Book' do
