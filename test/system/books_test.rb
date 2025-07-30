@@ -21,6 +21,7 @@ class BooksTest < ApplicationSystemTestCase
 
     fill_in 'メモ', with: @book.memo
     fill_in 'タイトル', with: @book.title
+    fill_in '著者', with: @book.author
     click_on '登録する'
 
     assert_text '本が作成されました。'
@@ -33,6 +34,7 @@ class BooksTest < ApplicationSystemTestCase
 
     fill_in 'メモ', with: @book.memo
     fill_in 'タイトル', with: @book.title
+    fill_in '著者', with: @book.author
     click_on '更新する'
 
     assert_text '本が更新されました。'
