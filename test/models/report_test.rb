@@ -6,6 +6,10 @@ class ReportTest < ActiveSupport::TestCase
   def setup
     @alice = users(:alice)
     @bob = users(:bob)
+    @carol = users(:carol)
+    @dave = users(:dave)
+    @ellen = users(:ellen)
+
     @alice_report = reports(:alice_report)
     @bob_report = reports(:bob_report)
   end

@@ -9,3 +9,12 @@ alice:
 
 bob:
   email: 'bob@example.com'
+
+carol:
+  email: 'carol@example.com'
+
+dave:
+  email: 'dave@example.com'
+
+ellen:
+  email: 'ellen@example.com'
