@@ -13,11 +13,11 @@ class ReportTest < ActiveSupport::TestCase
   test '日報の編集は作成者のみ可能' do
     # aliceの日報の編集機能について
     assert @alice_report.editable?(@alice)
-    refute @alice_report.editable?(@bob)
+    assert_not @alice_report.editable?(@bob)
 
     # bobの日報の編集機能について
     assert @bob_report.editable?(@bob)
-    refute @bob_report.editable?(@alice)
+    assert_not @bob_report.editable?(@alice)
   end
 
   test 'created_onで作成日を取得できる' do
