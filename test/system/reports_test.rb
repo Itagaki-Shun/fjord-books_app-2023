@@ -10,9 +10,9 @@ class ReportsTest < ApplicationSystemTestCase
     sign_in users(:alice)
   end
 
-  test 'visiting the index' do
+  test '日報一覧ページにアクセスする' do
     visit reports_url
-    assert_selector 'h1', text: 'Reports'
+    assert_selector 'h1', text: '日報の一覧'
   end
 
   test 'should create report' do
