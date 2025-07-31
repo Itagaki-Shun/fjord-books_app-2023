@@ -87,4 +87,25 @@ class ReportTest < ActiveSupport::TestCase
     # bobの日報はreport2ではメンションされていない
     assert_not_includes report2.mentioning_reports, @bob_report
   end
+
+  test 'メンションは非伝播性である' do
+    report1 = Report.create!(
+      user: @carol,
+      title: '課題終わった',
+      content: "課題が一つ終わりました\n参考にした日報はこちらです\nhttp://localhost:3000/reports/#{@alice_report.id}\nhttp://localhost:3000/reports/#{@bob_report.id}"
+    )
+    report2 = Report.create!(
+      user: @dave,
+      title: '参考になった日報',
+      content: "参考：\nhttp://localhost:3000/reports/#{report1.id}"
+    )
+    # 親日報がメンションされても、子日報のメンションはカウントされない
+    assert_equal 1, @alice_report.mentioned_reports.count
+    assert_not_equal 2, @alice_report.mentioned_reports.count
+    assert_equal 1, report1.mentioned_reports.count
+
+    # 親日報をメンションしたときに子日報の内容は含まれない
+    assert_includes report2.mentioning_reports, report1
+    assert_not_includes report2.mentioning_reports, @alice_report
+  end
 end
