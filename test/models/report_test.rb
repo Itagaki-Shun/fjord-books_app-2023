@@ -128,4 +128,17 @@ class ReportTest < ActiveSupport::TestCase
     assert_includes report.mentioning_reports, @bob_report
     assert_not_includes report.mentioning_reports, @alice_report
   end
+
+  test '日報が削除される' do
+    report = Report.create!(
+      user: @carol,
+      title: '日報1日目',
+      content: "参考：\nhttp://localhost:3000/reports/#{@alice_report.id}"
+    )
+    assert_equal 1, @alice_report.mentioned_reports.count
+
+    # メンションのあった日報が削除されるとメンション数が更新
+    report.destroy!
+    assert_equal 0, @alice_report.mentioned_reports.count
+  end
 end
