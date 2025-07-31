@@ -108,4 +108,24 @@ class ReportTest < ActiveSupport::TestCase
     assert_includes report2.mentioning_reports, report1
     assert_not_includes report2.mentioning_reports, @alice_report
   end
+
+  test '日報が更新される' do
+    report = Report.create!(
+      user: @carol,
+      title: '日報1日目',
+      content: "参考：\nhttp://localhost:3000/reports/#{@alice_report.id}"
+    )
+    assert_includes report.mentioning_reports, @alice_report
+
+    # bobの日報をメンションするように更新
+    report.update!(
+      title: '日報1日目(更新版)',
+      content: "参考：\nhttp://localhost:3000/reports/#{@bob_report.id}"
+    )
+    report.reload
+
+    # メンションされた人が更新されている
+    assert_includes report.mentioning_reports, @bob_report
+    assert_not_includes report.mentioning_reports, @alice_report
+  end
 end
