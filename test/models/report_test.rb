@@ -60,4 +60,31 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal 1, report2.mentioning_reports.count
     assert_includes report2.mentioning_reports, report1
   end
+
+  test '複数のメンションが作成される' do
+    report1 = Report.create!(
+      user: @carol,
+      title: '課題終わった',
+      content: "課題が一つ終わりました\n参考にした日報はこちらです\nhttp://localhost:3000/reports/#{@alice_report.id}\nhttp://localhost:3000/reports/#{@bob_report.id}"
+    )
+
+    report2 = Report.create!(
+      user: @dave,
+      title: '参考になった日報',
+      content: "参考：\nhttp://localhost:3000/reports/#{@alice_report.id}"
+    )
+
+    # それぞれのメンション数を確認
+    assert_equal 2, @alice_report.mentioned_reports.count
+    assert_equal 1, @bob_report.mentioned_reports.count
+
+    # report1のメンション確認
+    assert_includes report1.mentioning_reports, @alice_report
+    assert_includes report1.mentioning_reports, @bob_report
+
+    # report2のメンション確認
+    assert_includes report2.mentioning_reports, @alice_report
+    # bobの日報はreport2ではメンションされていない
+    assert_not_includes report2.mentioning_reports, @bob_report
+  end
 end
