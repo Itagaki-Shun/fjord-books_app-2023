@@ -41,7 +41,7 @@ class ReportTest < ActiveSupport::TestCase
     end
   end
 
-  test 'レポートURLを含む内容でメンションが作成される' do
+  test 'メンションを含む日報が作成される' do
     # メンションされる側の日報
     report1 = Report.create!(
       user: @bob,
@@ -61,7 +61,7 @@ class ReportTest < ActiveSupport::TestCase
     assert_includes report2.mentioning_reports, report1
   end
 
-  test '複数のメンションが作成される' do
+  test '複数のメンションを含む日報が作成される' do
     report1 = Report.create!(
       user: @carol,
       title: '課題終わった',
