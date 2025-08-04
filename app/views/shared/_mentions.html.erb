@@ -1,0 +1,6 @@
+<strong><%= Mention.model_name.human %>:</strong>
+<% if (mentions = Mention.order(:id).includes(:user).presence) %>
+
+<% else %>
+  (<%= t('.no_mentions') %>)
+<% end %>
