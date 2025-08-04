@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ReportCommentsController < ApplicationController
+class Books::CommentsController < ApplicationController
   include Commentable
 
   before_action :set_commentable
@@ -8,6 +8,6 @@ class ReportCommentsController < ApplicationController
   private
 
   def set_commentable
-    @commentable = @report = Report.find(params[:report_id])
+    @commentable = @book = Book.find(params[:book_id])
   end
 end
