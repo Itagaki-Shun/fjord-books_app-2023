@@ -11,7 +11,7 @@ module Commentable
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       flash[:alert] = @comment.errors.full_messages.join
-      render "#{@commentable.model_name.route_key}/show", status: :unprocessable_entity
+      on_save_error
     end
   end
 

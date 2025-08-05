@@ -10,4 +10,9 @@ class Books::CommentsController < ApplicationController
   def set_commentable
     @commentable = @book = Book.find(params[:book_id])
   end
+
+  def on_save_error
+    @book = @commentable
+    render 'books/show', status: :unprocessable_entity
+  end
 end

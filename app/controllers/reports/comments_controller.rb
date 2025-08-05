@@ -10,4 +10,9 @@ class Reports::CommentsController < ApplicationController
   def set_commentable
     @commentable = @report = Report.find(params[:report_id])
   end
+
+  def on_save_error
+    @report = @commentable
+    render 'reports/show', status: :unprocessable_entity
+  end
 end
