@@ -12,7 +12,7 @@ class Report < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
-  after_save :update_mentions
+  after_save :update_mentions!
 
   def editable?(target_user)
     user == target_user
@@ -22,7 +22,7 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
-  def update_mentions
+  def update_mentions!
     active_mentions.destroy_all
     report_ids = content.scan(%r{http://127\.0\.0\.1:3000/reports/(\d+)}).flatten.map(&:to_i).uniq
 
