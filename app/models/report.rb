@@ -24,7 +24,7 @@ class Report < ApplicationRecord
 
   def update_mentions!
     active_mentions.destroy_all
-    report_ids = content.scan(%r{http://127\.0\.0\.1:3000/reports/(\d+)}).flatten.map(&:to_i).uniq
+    report_ids = content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i).uniq
 
     Report.where(id: report_ids).where.not(id:).find_each do |report|
       active_mentions.create!(mentioned_id: report.id)
