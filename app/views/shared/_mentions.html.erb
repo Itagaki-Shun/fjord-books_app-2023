@@ -1,0 +1,13 @@
+<strong><%= Mention.model_name.human %>:</strong>
+<% if @report.mentioned_reports&.any? %>
+  <ul>
+    <% @report.mentioned_reports.each do |report| %>
+      <li>
+        <%= report.user.name_or_email %>
+        <%= link_to report.title, report_path(report.id) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  (<%= t('.no_mentions') %>)
+<% end %>
